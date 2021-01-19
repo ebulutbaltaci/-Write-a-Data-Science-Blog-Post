@@ -13,7 +13,11 @@ This project is part of Udacity Data Scientists Nanodegree Program.
 I used Seattle Airbnb Dataset for this project. As part of the Airbnb Inside initiative, the dataset describes the listing activities of homestays in Boston. The orijinal dataset can be found here: https://www.kaggle.com/airbnb/boston
 
 
-This project focuses on answering following questions: ????????????????????????????????????????????????????????
+This project focuses on answering following questions:
+
+What are the most important factors in property valuation?
+What are the factors in price determination?
+What time of year has the highest rental prices?
 
 
 Libraries
