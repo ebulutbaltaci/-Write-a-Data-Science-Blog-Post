@@ -13,6 +13,7 @@ Libraries
 I use Python3. Here are the libraries I used in my Jupyter Notebook:
 
 1.Numpy
+
 2.Pandas
 3.Seaborn
 4.matplotlib.pyplot
