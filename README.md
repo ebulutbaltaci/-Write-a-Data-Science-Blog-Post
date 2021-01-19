@@ -2,12 +2,9 @@ Write a Data Science Blog Post
 
 Medium Blog Post
 
-Here is the Medium blog post I have written: 
-
-
+Here is the Medium blog post I have written:
 
 I used Boston Airbnb Dataset for this project. As part of the Airbnb Inside initiative, the dataset describes the listing activities of homestays in Boston. The orijinal dataset can be found here: https://www.kaggle.com/airbnb/boston
-
 
 This project focuses on answering following questions:
 
@@ -17,13 +14,9 @@ What are the factors in price determination?
 
 What time of year has the highest rental prices?
 
-
-
 Libraries
 
 I use Python3. Here are the libraries I used in my Jupyter Notebook:
-
-
 
 1.Numpy
 
@@ -51,13 +44,6 @@ I use Python3. Here are the libraries I used in my Jupyter Notebook:
 
 13.folium
 
-
-
-
-
 File Descriptions
 
 Boston AirBNB.ipynb Jupyter notebook with complete analysis, answers to the questions, explanations and visualisations
-
-
-
