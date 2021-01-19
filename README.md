@@ -5,12 +5,8 @@ Medium Blog Post
 Here is the Medium blog post I have written: 
 
 
-Project Motivation
 
-This project is part of Udacity Data Scientists Nanodegree Program.
-
-
-I used Seattle Airbnb Dataset for this project. As part of the Airbnb Inside initiative, the dataset describes the listing activities of homestays in Boston. The orijinal dataset can be found here: https://www.kaggle.com/airbnb/boston
+I used Boston Airbnb Dataset for this project. As part of the Airbnb Inside initiative, the dataset describes the listing activities of homestays in Boston. The orijinal dataset can be found here: https://www.kaggle.com/airbnb/boston
 
 
 This project focuses on answering following questions:
@@ -50,6 +46,11 @@ I use Python3. Here are the libraries I used in my Jupyter Notebook:
 10.sklearn.model_selection
 
 11.statsmodels.api
+
+12.re
+
+13.folium
+
 
 
 
