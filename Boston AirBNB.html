@@ -13862,7 +13862,13 @@ memory usage: 3.1+ MB
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#drop na rows in bathrooms, bedrooms, beds</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Null values are removed from the rows in the data set. </span>
+<span class="sd">    If these data were not extracted, errors could have been made in the analysis. </span>
+<span class="sd">    Here it could be proceeded by taking the average of the column without subtracting the values, </span>
+<span class="sd">    but I preferred to subtract.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">#drop na rows in bathrooms, bedrooms, beds</span>
 <span class="n">df_list</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bathrooms&quot;</span><span class="p">,</span> <span class="s2">&quot;bedrooms&quot;</span><span class="p">,</span> <span class="s2">&quot;beds&quot;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="c1">#Creating new dataframe </span>
@@ -14247,7 +14253,9 @@ memory usage: 3.1+ MB
         <span class="s1">&#39;property_type&#39;</span><span class="p">,</span> <span class="s1">&#39;host_response_time&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_list</span><span class="p">[[</span><span class="s1">&#39;host_is_superhost&#39;</span><span class="p">,</span> 
                                                            <span class="s1">&#39;room_type&#39;</span><span class="p">,</span> <span class="s1">&#39;neighbourhood_cleansed&#39;</span><span class="p">,</span> 
                                                            <span class="s1">&#39;cancellation_policy&#39;</span><span class="p">,</span> <span class="s1">&#39;property_type&#39;</span><span class="p">,</span> <span class="s1">&#39;host_response_time&#39;</span><span class="p">]]</span>
-
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Variable has been removed from the data set due to the small amount of data.</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="c1">#drop the columns</span>
 <span class="n">df_int</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;square_feet&quot;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">df_int</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -14507,6 +14515,26 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <span class="c1">#split test and train dataset from X and y</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.30</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
+<span class="sd">&#39;&#39;&#39;Input:</span>
+<span class="sd">        model : define prediction algorithm to apply</span>
+<span class="sd">        x_train : training dataset with input features</span>
+<span class="sd">        y_test : training data series for target variable</span>
+<span class="sd">        x_test : validation dataset with input features</span>
+<span class="sd">        y_test : validation data series for target variable</span>
+<span class="sd">    </span>
+<span class="sd">    1.) fit the model to training data</span>
+<span class="sd">    2.) predict the target variable for the validation data</span>
+<span class="sd">    3.) compare and evaluate the predicted target variable and actual target variable for the data set</span>
+<span class="sd">    </span>
+<span class="sd">    Output:</span>
+<span class="sd">    1.) Mean absolute error for each model applied</span>
+<span class="sd">    2.) scatter plot for the difference between actual and predicted target variable of the data set</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1"># Evaluation metrics</span>
+<span class="c1"># Mean Absolute Error (MAE)</span>
+<span class="c1"># Mean Squared Error (MSE)</span>
+<span class="c1"># Root Mean Squared Error(RMSE)</span>
 
 <span class="k">def</span> <span class="nf">model_evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
 
@@ -16162,7 +16190,30 @@ Therefore we drop rows where price is null and drop the available column as this
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_scores</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
-    
+<span class="sd">&quot;&quot;&quot;Returns the coefficient of determination R-squared  of the prediction. </span>
+<span class="sd">  </span>
+<span class="sd">         The coefficient R-squared is defined as (1 - u/v), where u is the residual </span>
+<span class="sd">         sum of squares ((y_true - y_pred) ** 2).sum() and v is the total </span>
+<span class="sd">         sum of squares ((y_true - y_true.mean()) ** 2).sum(). </span>
+<span class="sd">         The best possible score is 1.0 and it can be negative (because the </span>
+<span class="sd">         model can be arbitrarily worse). A constant model that always </span>
+<span class="sd">         predicts the expected value of y, disregarding the input features, </span>
+<span class="sd">         would get a R-squared  score of 0.0. </span>
+<span class="sd">  </span>
+<span class="sd">         Parameters </span>
+<span class="sd">         ---------- </span>
+<span class="sd">         X : array-like, shape = (n_samples, n_features) </span>
+<span class="sd">             Test samples. </span>
+<span class="sd">  </span>
+<span class="sd">         y : array-like, shape = (n_samples) or (n_samples, n_outputs) </span>
+<span class="sd">             True values for X. </span>
+<span class="sd">  </span>
+<span class="sd">         Returns </span>
+<span class="sd">         ------- </span>
+<span class="sd">         score : float </span>
+<span class="sd">             R-squared  of self.predict(X) wrt. y. </span>
+<span class="sd">         </span>
+<span class="sd">&quot;&quot;&quot;</span> 
     <span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
     <span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
@@ -16193,6 +16244,11 @@ Therefore we drop rows where price is null and drop the available column as this
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">r2_score</span>
 
+<span class="sd">&quot;&quot;&quot;Performs Linear Regression (from scratch) using randomized data.</span>
+
+<span class="sd">    Optimizes weights by using Gradient Descent Algorithm.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">price</span>
 
@@ -16267,7 +16323,11 @@ Test R-squared : 0.602	 Test RMSE : $96.97
     <span class="k">return</span> <span class="n">df</span>
 
 <span class="k">def</span> <span class="nf">plot_coefficients</span><span class="p">(</span><span class="n">coefficients_df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;icefire&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Coefficients&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    
+    <span class="sd">&quot;&quot;&quot; Returns a polynomial for ``x`` values for the ``coeffs`` provided.</span>
+
+<span class="sd">        The coefficients must be in ascending order (``x**0`` to ``x**o``).</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
         <span class="n">y</span><span class="o">=</span><span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;coefficients&#39;</span><span class="p">,</span>
         <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">coefficients_df</span><span class="p">,</span>
@@ -16361,9 +16421,24 @@ Test R-squared : 0.602	 Test RMSE : $96.97
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestRegressor</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize the RandomForest class.</span>
 
+<span class="sd">    :param samp_size: The number of samples to put within each decision tree</span>
+<span class="sd">    :param num_trees: The number of trees to make</span>
+<span class="sd">    :param split_type: The criteria to split on</span>
+<span class="sd">    :param terminate: The termination criteria</span>
+<span class="sd">    :param leaf_terminate: The number of samples to put into a leaf</span>
+<span class="sd">    :param oob: Whether to cross-validated using an out-of-bag samp.e</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit (train) a Random Forest model to the data.</span>
+
+<span class="sd">    :param x_data: The dataset to train the decision tree with</span>
+<span class="sd">    :param y_data: The result vector we are classifying (target)</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">print_scores</span><span class="p">(</span><span class="n">rf</span><span class="p">)</span>
 </pre></div>
 
