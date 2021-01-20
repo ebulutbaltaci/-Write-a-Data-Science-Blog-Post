@@ -1,8 +1,7 @@
 Write a Data Science Blog Post
 
-Medium Blog Post
 
-Here is the Medium blog post I have written:
+Here is blog post : https://ebulutbaltaci.medium.com/boston-airbnb-prices-predictions-models-7539c238183e
 
 I used Boston Airbnb Dataset for this project. As part of the Airbnb Inside initiative, the dataset describes the listing activities of homestays in Boston. The orijinal dataset can be found here: https://www.kaggle.com/airbnb/boston
 
